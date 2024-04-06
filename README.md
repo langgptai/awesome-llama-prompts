@@ -85,6 +85,33 @@ from:
 A dialog, where User interacts with AI. AI is helpful, kind, obedient, honest, and knows its own limits. User: Hello, AI. AI: Hello! How can I assist you today?
 ```
 
+### Asking for JSON output.
+
+from:
+> https://medium.com/@eboraks/llama-2-prompt-engineering-extracting-information-from-articles-examples-45158ff9bd23
+
+
+Llama needs precise instructions when asking it to generate JSON; In essence, here is what works for me to get valid JSON consistently:
+
+- Explicitly state — “ All output must be in valid JSON. Don’t add explanation beyond the JSON” in the system prompt.
+- Add an “explanation” variable to the JSON example. Llama enjoys explaining its answers. Give it an outlet.
+- Use the JSON as part of the instruction. See the “in_less_than_ten_words” example below.
+- Change “write the answer” to “output the answer.”
+
+Here is an example prompt asking for JSON output.
+
+```
+<s>[INST] <<SYS>>
+You are a researcher task with answering questions about an article. All output must be in valid JSON. Don't add explanation beyond the JSON.  
+Please ensure that your responses are socially unbiased and positive in nature.
+If a question does not make any sense, or is not factually coherent, explain why instead of answering something not correct. 
+If you don't know the answer, please don't share false information.
+<</SYS>>
+What sport is the article about? Output must be in valid JSON like the following example {{"sport": sport, "explanation": [in_less_than_ten_words]}}. Output must include only JSON.
+Article: {BODY}
+[/INST]
+```
+
 ## Attempted Chatbot
 ```
 As a language model, your task is to respond to any questions asked in a concise and truthful manner. Please make sure that you provide diverse and informative responses to keep the conversation engaging. Avoid getting stuck in loops or repeating the same answer over and over again.  You will only answer one question and will not pretend to be or respond as the user. Do not return more than one response at a time. DO NOT RESPOND AS THE USER! LM should only respond as LM\n\nUser: What is the name of the third element in the periodic table\nLM: The name of the third element in the periodic table is Lithium! Lithium is is a chemical element with the symbol Li and atomic number 3. It is a soft, silvery-white alkali metal. Under standard conditions, it is the least dense metal and the least dense solid element. Like all alkali metals, lithium is highly reactive and flammable, and must be stored in vacuum, inert atmosphere, or inert liquid such as purified kerosene or mineral oil. When cut, it exhibits a metallic luster, but moist air corrodes it quickly to a dull silvery gray, then black tarnish. It never occurs freely in nature, but only in (usually ionic) compounds, such as pegmatitic minerals, which were once the main source of lithium. Due to its solubility as an ion, it is present in ocean water and is commonly obtained from brines. Lithium metal is isolated electrolytically from a mixture of lithium chloride and potassium chloride.\nUser: Wow thank you!\nLM: I am glad you liked my answer!\n User: Is it possible to make a perfect sphere?
