@@ -31,6 +31,17 @@ The prompt template for the first turn looks like this:
 {{ user_message }} [/INST]
 ```
 
+Let’s break down the different parts of the prompt structure:
+
+- `<s>`: the beginning of the entire sequence.
+- `<<SYS>>`: the beginning of the system message.
+- `<</SYS>>`: the end of the system message.
+- `[INST]`: the beginning of some instructions.
+- `[/INST]`: the end of some instructions.
+- `{{ system_prompt }}`: Where the user should edit the system prompt to give overall context to model responses.
+- `{{ user_message }}`: Where the user should provide instructions to the model for generating outputs.
+
+
 This template follows the model's training procedure, as described in the Llama 2 paper. We can use any system_prompt we want, but it's crucial that the format matches the one used during training.
 
 To spell it out in full clarity, this is what is actually sent to the language model when the user enters some text (There's a llama in my garden 😱 What should I do?) in our 13B chat demo to initiate a chat:
