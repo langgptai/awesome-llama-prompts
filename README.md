@@ -81,6 +81,33 @@ just send
 
 ![imgs](imgs/sys_img2.png)
 
+### Asking for JSON output.
+
+from:
+> https://medium.com/@eboraks/llama-2-prompt-engineering-extracting-information-from-articles-examples-45158ff9bd23
+
+
+Llama needs precise instructions when asking it to generate JSON; In essence, here is what works for me to get valid JSON consistently:
+
+- Explicitly state — “ All output must be in valid JSON. Don’t add explanation beyond the JSON” in the system prompt.
+- Add an “explanation” variable to the JSON example. Llama enjoys explaining its answers. Give it an outlet.
+- Use the JSON as part of the instruction. See the “in_less_than_ten_words” example below.
+- Change “write the answer” to “output the answer.”
+
+Here is an example prompt asking for JSON output.
+
+```
+<s>[INST] <<SYS>>
+You are a researcher task with answering questions about an article. All output must be in valid JSON. Don't add explanation beyond the JSON.  
+Please ensure that your responses are socially unbiased and positive in nature.
+If a question does not make any sense, or is not factually coherent, explain why instead of answering something not correct. 
+If you don't know the answer, please don't share false information.
+<</SYS>>
+What sport is the article about? Output must be in valid JSON like the following example {{"sport": sport, "explanation": [in_less_than_ten_words]}}. Output must include only JSON.
+Article: {BODY}
+[/INST]
+```
+
 ## Prompts
 
 ### Llama2-Code-Interpreter Prompts
@@ -151,33 +178,6 @@ from:
 > https://github.com/devbrones/llama-prompts
 ```
 A dialog, where User interacts with AI. AI is helpful, kind, obedient, honest, and knows its own limits. User: Hello, AI. AI: Hello! How can I assist you today?
-```
-
-### Asking for JSON output.
-
-from:
-> https://medium.com/@eboraks/llama-2-prompt-engineering-extracting-information-from-articles-examples-45158ff9bd23
-
-
-Llama needs precise instructions when asking it to generate JSON; In essence, here is what works for me to get valid JSON consistently:
-
-- Explicitly state — “ All output must be in valid JSON. Don’t add explanation beyond the JSON” in the system prompt.
-- Add an “explanation” variable to the JSON example. Llama enjoys explaining its answers. Give it an outlet.
-- Use the JSON as part of the instruction. See the “in_less_than_ten_words” example below.
-- Change “write the answer” to “output the answer.”
-
-Here is an example prompt asking for JSON output.
-
-```
-<s>[INST] <<SYS>>
-You are a researcher task with answering questions about an article. All output must be in valid JSON. Don't add explanation beyond the JSON.  
-Please ensure that your responses are socially unbiased and positive in nature.
-If a question does not make any sense, or is not factually coherent, explain why instead of answering something not correct. 
-If you don't know the answer, please don't share false information.
-<</SYS>>
-What sport is the article about? Output must be in valid JSON like the following example {{"sport": sport, "explanation": [in_less_than_ten_words]}}. Output must include only JSON.
-Article: {BODY}
-[/INST]
 ```
 
 ## Attempted Chatbot
