@@ -1,4 +1,8 @@
-# Llama2 提示词结构与编写指南
+Llama2 提示词结构与编写指南
+
+* [LangGPT 提示词社区](https://www.langgpt.ai)
+* [GitHub 项目- Llama2 提示词精选](https://github.dev/langgptai/awesome-llama-prompts)
+
 
 ## llama-2 chat 提示词结构
 
@@ -47,7 +51,7 @@ There's a llama in my garden 😱 What should I do?
 <</SYS>>
 ```
 
-![imgs](https://raw.githubusercontent.com/langgptai/awesome-llama-prompts/main/imgs/sys_img2.png)
+![imgs](https://img-blog.csdnimg.cn/img_convert/934f2c3387b52eadeddc3e477aeea481.png)
 
 ## Llama 2 提示词编写技巧
 Meta的工程师们分享了六条提示技巧，帮助更好的向 Llama 2 提问以获得最佳结果。
@@ -111,7 +115,7 @@ Meta的工程师们分享了六条提示技巧，帮助更好的向 Llama 2 提�
 
 结果将是一个更技术性的回应，包含了有关 PyTorch 更专家级细节的信息。
 
-![img](https://eu-images.contentstack.com/v3/assets/blt6b0f74e5591baa03/blt97fbfdeab74361c2/65b81e31709e8e040a956df8/image.png?width=700&auto=webp&quality=80&disable=upscale)
+![img](https://img-blog.csdnimg.cn/img_convert/53acb5605aa70ed0492fcad45da6f559.png)
 
 ## #3 思维链
 
@@ -152,7 +156,7 @@ CoT 或思维链提示，来源于 [Google Brain 论文](https://arxiv.org/pdf/2
 
 模型不仅仅是生成信息，还会被任务要求比较和对比自己的输出，以确定最一致和支持最好的答案。
 
-![img](https://eu-images.contentstack.com/v3/assets/blt6b0f74e5591baa03/blt5c517d978a8605ff/65b81e4d967a10040a01dde5/image.png?width=700&auto=webp&quality=80&disable=upscale)
+![img](https://img-blog.csdnimg.cn/img_convert/1da633fe74141ba7cae354d2b63956e2.png)
 
 ## #5 检索增强生成
 
