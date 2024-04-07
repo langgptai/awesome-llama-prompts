@@ -47,7 +47,7 @@ There's a llama in my garden 😱 What should I do?
 <</SYS>>
 ```
 
-![imgs](../imgs/sys_img2.png)
+![imgs](https://raw.githubusercontent.com/langgptai/awesome-llama-prompts/main/imgs/sys_img2.png)
 
 ## Llama 2 提示词编写技巧
 Meta的工程师们分享了六条提示技巧，帮助更好的向 Llama 2 提问以获得最佳结果。
