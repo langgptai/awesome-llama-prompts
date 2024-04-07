@@ -11,6 +11,7 @@ In this repository, you will find a variety of prompts that can be used with Lla
 
 For Chinese you can find:
 * [Llama-Chinese](https://github.com/LlamaFamily/Llama-Chinese) Llama中文社区，最好的中文Llama大模型，完全开源可商用 
+* [Llama2 提示词结构与编写指南](articles/llama_prompting.md)
 
 ## How to Prompt Llama 2
 
